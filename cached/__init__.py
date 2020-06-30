@@ -1,13 +1,13 @@
-#!/usr/bin/env python
+__all__ = ['cached']
+
+
 import collections
 import inspect
 from decorator import decorator
-import public
 
 results = collections.defaultdict(dict)
 
 
-@public.add
 def cached(function):
     """`@cache` decorator, `cache(function)` - cache function result"""
     if not inspect.isfunction(function):
